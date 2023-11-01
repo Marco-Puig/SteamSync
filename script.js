@@ -1,5 +1,6 @@
 const { JSDOM } = require('jsdom');
 const { window } = new JSDOM();
+const Parse = require('parse/node');
 // Now you can use the window object
 global.window = window;
 
