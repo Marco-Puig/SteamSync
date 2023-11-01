@@ -4,10 +4,10 @@
     "description": "Steam Companion App!",
     "main": "script.js",
     "scripts": {
-      "start": "node script.js"
+        "start": "node script.js"
     },
     "dependencies": {
-      "express": "^4.17.1"
+        "express": "^4.17.1",
+        "jsdom": "^22.1.0"
     }
-  }
-  
+}

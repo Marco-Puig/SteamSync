@@ -1,7 +1,16 @@
+const { JSDOM } = require('jsdom');
+const { window } = new JSDOM();
+
+// Now you can use the window object
+global.window = window;
+
 // Initialize Parse
 window.onload = function() {
-  Parse.initialize("QD3o4wcV8jOu1DrPizbXjzTg7tuNZPGoVKyP7RwR", "mad7NPqDFXX0PlkRSITENXZJk2eYzsPcN2Urygoi");
-  Parse.serverURL = "https://parseapi.back4app.com/";
+  if (typeof window !== 'undefined') {
+    // Initialize Parse
+    Parse.initialize("QD3o4wcV8jOu1DrPizbXjzTg7tuNZPGoVKyP7RwR", "mad7NPqDFXX0PlkRSITENXZJk2eYzsPcN2Urygoi");
+    Parse.serverURL = "https://parseapi.back4app.com/";
+  }
 
   // Steam Web API Key
   const steamApiKey = "E4ABF7871264272AD62B7798CCF512DC";
