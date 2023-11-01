@@ -2,9 +2,9 @@
     "name": "steamsync",
     "version": "1.0.0",
     "description": "Steam Companion App!",
-    "main": "index.js",
+    "main": "script.js",
     "scripts": {
-      "start": "node index.js"
+      "start": "node script.js"
     },
     "dependencies": {
       "express": "^4.17.1"
