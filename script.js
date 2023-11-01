@@ -1,6 +1,5 @@
 const { JSDOM } = require('jsdom');
 const { window } = new JSDOM();
-Parse = new XMLHttpRequest("https://www.parsecdn.com/js/parse.min.js")
 // Now you can use the window object
 global.window = window;
 
