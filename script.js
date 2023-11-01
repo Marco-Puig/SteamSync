@@ -52,8 +52,10 @@ window.onload = function() {
     }
   }
 
-  // Add event listener for the login button
-  document.getElementById('loginButton').addEventListener('click', redirectToSteamLogin);
+  window.addEventListener('DOMContentLoaded', (event) => {
+    // Your code that interacts with the DOM here
+    document.getElementById('loginButton').addEventListener('click', redirectToSteamLogin);
+});
 
   // Check if the URL contains Steam login response parameters
   if (window.location.search.includes('openid.identity')) {
