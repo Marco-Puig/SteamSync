@@ -4,8 +4,17 @@ import json
 import re
 import requests
 import urllib.parse
+import firebase_admin
+from firebase_admin import credentials, db
+
 
 app = Flask(__name__)
+
+# Initialize Firebase
+cred = credentials.Certificate("path/to/your/serviceAccountKey.json")
+firebase_admin.initialize_app(cred, {
+    'databaseURL': 'https://your-firebase-project-id.firebaseio.com/'
+})
 
 RAPIDAPI_KEY = "887b3f8b15mshbd3fe8a5db8cdefp19c527jsnfc5aacbdb5ad"
 GAMESPOTAPI_KEY = "15db3545ca5bec59186fca6096262dfacf0c7659"
@@ -249,6 +258,21 @@ def game_detail(game_id):
 
     # Rendering the template with game details, reviews, and news
     return render_template("game_detail.html", game=game, reviews=reviews, news=newsitems)
+
+
+# Example: Writing data to Firebase Realtime Database
+@app.route("/write_data_to_firebase", methods=['POST'])
+def write_data_to_firebase():
+    data_to_write = request.json  # Assuming you are sending JSON data in the request
+    db.reference('/path/to/database').set(data_to_write)
+    return jsonify({"message": "Data written to Firebase"})
+
+# Example: Reading data from Firebase Realtime Database
+@app.route("/read_data_from_firebase", methods=['GET'])
+def read_data_from_firebase():
+    data = db.reference('/path/to/database').get()
+    return jsonify(data)
+
 
 
 if __name__ == "__main__":
