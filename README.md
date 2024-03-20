@@ -59,13 +59,6 @@
 
 ---
 
-## 🎥 Screenshots & Walkthroughs
-
-### Figma Design:
-<img src='https://i.postimg.cc/3w5vJ0R9/figma-group-10.png' border='0' alt='figma-group-10' width='1000'/>
-
----
-
 ## 🔗 Links
 Project Writeup: https://docs.google.com/document/d/1qL1sP7-15PbBr87Af-ZNZQfiEj_WoBRthYSpdCiaoAQ/edit?usp=sharing 
 
